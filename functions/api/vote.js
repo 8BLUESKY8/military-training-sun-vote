@@ -10,7 +10,7 @@ async function totals(DB) {
   const data = Object.fromEntries(rows.results.map((row) => [row.choice, Number(row.count)]));
   const increase = data.increase || 0;
   const decrease = data.decrease || 0;
-  return { increase, decrease, totalSun: Math.max(0, 32022 + increase - decrease) };
+  return { increase, decrease, totalSun: Math.max(0, increase - decrease) };
 }
 
 export async function onRequestGet({ env }) {
