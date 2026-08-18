@@ -5,4 +5,4 @@ pages_build_output_dir = "."
 [[d1_databases]]
 binding = "DB"
 database_name = "military-training-sun-vote"
-database_id = "请替换为 Cloudflare D1 数据库 ID"
+database_id = "ed295248-86bb-46e5-b763-d8ad5e031ae6"
