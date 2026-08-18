@@ -1,0 +1,8 @@
+name = "military-training-sun-vote"
+compatibility_date = "2026-08-18"
+pages_build_output_dir = "."
+
+[[d1_databases]]
+binding = "DB"
+database_name = "military-training-sun-vote"
+database_id = "请替换为 Cloudflare D1 数据库 ID"
