@@ -1,4 +1,4 @@
-const fallback = { increase: 247625, decrease: 215603, totalSun: 32022 };
+const fallback = { increase: 0, decrease: 0, totalSun: 0 };
 let state = { ...fallback };
 let submitting = false;
 const $ = (s) => document.querySelector(s);
@@ -17,7 +17,7 @@ function render() {
   $('#increaseVotes').textContent = fmt(state.increase);
   $('#decreaseVotes').textContent = fmt(state.decrease);
   $('#totalSun').textContent = fmt(state.totalSun);
-  $('#sunRatio').style.width = `${Math.round(state.increase / total * 100)}%`;
+  $('#sunRatio').style.width = `${total ? Math.round(state.increase / total * 100) : 50}%`;
 }
 function toast(message) { const el = $('#toast'); el.textContent = message; el.classList.add('show'); setTimeout(() => el.classList.remove('show'), 1800); }
 function rainPlants(button, asset, plantClass) {
