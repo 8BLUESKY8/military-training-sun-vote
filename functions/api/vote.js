@@ -43,8 +43,8 @@ const todayVotes = await env.DB.prepare(
 ).bind(voterId, todayStart).first();
 
 // 每人每天最多 10 票
-if (Number(todayVotes.total) >= 10) {
-  return json({ error: '你今天的 10 票已经用完啦，明天再来吧！' }, 429);
+if (Number(todayVotes.total) >= 3) {
+  return json({ error: '你今天的 3 票已经用完啦，明天再来吧！' }, 429);
 }
 
   await env.DB.batch([
