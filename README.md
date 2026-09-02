@@ -40,3 +40,9 @@ Cloudflare Dashboard → **Workers 和 Pages → 创建 → Pages → 连接到 
 - `vote_totals` 保存全站汇总票数，保证读取速度。
 - 当前后端限制同一匿名访客 10 秒最多 12 票；页面仍可不限次数投票。
 - 正式校园活动建议再在 Cloudflare Dashboard 配置 Turnstile，或接入学校统一认证，避免清除浏览器数据后重复刷票。
+
+- ###缓存优化
+-为优化缓存，在 GitHub 项目根目录添加了 _headers 文件：- HTML 使用 no-cache
+- CSS、JS、JPG、WebP 缓存一年
+- /api/* 设置为 no-store
+- 还调整了投票逻辑，使“当前阳光数”允许显示负数。
