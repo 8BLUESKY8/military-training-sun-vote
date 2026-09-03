@@ -182,17 +182,16 @@ function loadDecorativeBackground() {
   document.documentElement.classList.add('background-ready');
 }
 
-/* 先显示页面，不等待接口和背景图 */
 render();
 
-/* 浏览器空闲后再加载背景图 */
 if ('requestIdleCallback' in window) {
   window.requestIdleCallback(loadDecorativeBackground, {
     timeout: 1200
   });
-} else {
-  setTimeout(loadDecorativeBackground, 250);
 }
+
+// 兜底：最多 1.5 秒后一定显示背景
+setTimeout(loadDecorativeBackground, 1500);
 
 async function loadTotals() {
   const requestVersion = ++stateVersion;
